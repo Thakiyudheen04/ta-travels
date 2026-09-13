@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TA Travels - Chennai & Kerala's Premier Transit, Flight, Train & Tour Companion</title>
+    <meta name="description" content="TA Travels provides 24/7 airport transit fresh-up rooms, flight & train ticket booking, self-drive car rentals, chauffeur services, and custom Chennai & Kerala tour packages near Chennai Airport. Book instantly on WhatsApp.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0b2c4a',    /* Deep Navy from logo letters/train */
+                            blue: '#0273b4',    /* Medium Blue from logo 'i' and plane */
+                            cyan: '#00b4d8',    /* Cyan from pin and swoosh */
+                            light: '#e6f4fa',   /* Soft blue background tint */
+                            whatsapp: '#25D366',/* WhatsApp Green */
+                            whatsappHover: '#128C7E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-shadow {
+            box-shadow: 0 10px 30px -10px rgba(11, 44, 74, 0.15);
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(11, 44, 74, 0.88), rgba(11, 44, 74, 0.72)), url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .tab-active {
+            border-bottom-color: #0273b4;
+            color: #0273b4;
+            background-color: #ffffff;
+            font-weight: 700;
+        }
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .package-card:hover {
+            transform: translateY(-6px);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-gray-50 antialiased selection:bg-brand-cyan selection:text-white">
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I%20need%20assistance%20with%20booking%20travel%20services." 
+       target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-50 bg-brand-whatsapp hover:bg-brand-whatsappHover text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out font-bold text-sm ml-0 group-hover:ml-2">
+            Instant Chat
+        </span>
+    </a>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo (Updated img src=logo.png) -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="h-14 w-auto flex items-center">
+                        <img src="logo.png" alt="TA Travels Logo" class="h-12 w-auto object-contain" onerror="this.src='https://via.placeholder.com/180x60?text=TA+Travels';">
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-6">
+                    <a href="#home" class="text-sm font-semibold text-gray-700 hover:text-brand-blue transition-colors">Home</a>
+                    <a href="#ota-search" class="text-sm font-semibold text-gray-700 hover:text-brand-blue transition-colors flex items-center gap-1"><i class="fa-solid fa-plane-departure text-brand-cyan text-xs"></i> Flights & Trains</a>
+                    <a href="#services" class="text-sm font-semibold text-gray-700 hover:text-brand-blue transition-colors">Services</a>
+                    <a href="#fresh-up" class="text-sm font-semibold text-gray-700 hover:text-brand-blue transition-colors">Fresh-Up Rooms</a>
+                    <a href="#packages" class="text-sm font-semibold text-gray-700 hover:text-brand-blue transition-colors">Chennai Tours</a>
+                    <a href="#kerala-packages" class="text-sm font-semibold text-brand-blue font-bold hover:text-brand-navy transition-colors flex items-center gap-1"><i class="fa-solid fa-tree text-emerald-500 text-xs"></i> Kerala Tours</a>
+                    <a href="#transport" class="text-sm font-semibold text-gray-700 hover:text-brand-blue transition-colors">Fleet & Rentals</a>
+                    <a href="#contact" class="text-sm font-semibold text-gray-700 hover:text-brand-blue transition-colors">Contact</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I'd%20like%20to%20inquire%20about%20a%20travel%20booking." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="bg-brand-whatsapp hover:bg-brand-whatsappHover text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition-all duration-300 shadow-md flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span>+91 94004 71162</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="menu-btn" class="lg:hidden p-2 rounded-lg text-gray-600 hover:text-brand-navy hover:bg-gray-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-6 space-y-3 font-sans shadow-lg">
+            <a href="#home" class="block py-2 text-sm font-bold text-gray-700 border-b border-gray-50">Home</a>
+            <a href="#ota-search" class="block py-2 text-sm font-bold text-brand-blue border-b border-gray-50">✈️ Flights & 🚆 Trains Search</a>
+            <a href="#services" class="block py-2 text-sm font-bold text-gray-700 border-b border-gray-50">Services</a>
+            <a href="#fresh-up" class="block py-2 text-sm font-bold text-gray-700 border-b border-gray-50">Fresh-Up Rooms</a>
+            <a href="#packages" class="block py-2 text-sm font-bold text-gray-700 border-b border-gray-50">Chennai Tour Packages</a>
+            <a href="#kerala-packages" class="block py-2 text-sm font-bold text-emerald-600 border-b border-gray-50">🌴 Kerala Tour Packages</a>
+            <a href="#transport" class="block py-2 text-sm font-bold text-gray-700 border-b border-gray-50">Car & Bike Rentals</a>
+            <a href="#contact" class="block py-2 text-sm font-bold text-gray-700">Contact Us</a>
+            
+            <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I'd%20like%20to%20inquire%20about%20a%20travel%20booking." 
+               target="_blank" rel="noopener noreferrer"
+               class="w-full mt-2 bg-brand-whatsapp text-white font-bold text-sm py-3 rounded-xl flex items-center justify-center gap-2">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span>Enquire on WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION WITH OTA SEARCH WIDGET -->
+    <section id="home" class="hero-bg py-16 lg:py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto text-white space-y-4 mb-10">
+                <span class="inline-block bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/40 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider">
+                    Travel Easy • Explore More
+                </span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-outfit leading-tight">
+                    Your Complete Chennai & Kerala Travel Hub
+                </h1>
+                <p class="text-gray-200 text-sm sm:text-lg leading-relaxed max-w-2xl mx-auto">
+                    Search Flights, Train Tickets, Hourly Transit Stays, Car Rentals, and Custom Tour Packages across South India. Fast, transparent & API-ready.
+                </p>
+            </div>
+
+            <!-- OTA TABBED BOOKING WIDGET -->
+            <div id="ota-search" class="max-w-5xl mx-auto glass-card rounded-3xl p-4 sm:p-8 custom-shadow border border-white/40">
+                
+                <!-- Widget Tabs Header -->
+                <div class="flex overflow-x-auto no-scrollbar border-b border-gray-200/80 mb-6 gap-2 sm:gap-4 pb-2">
+                    <button id="btn-tab-flights" onclick="switchMainTab('flights')" class="tab-active px-4 py-3 text-xs sm:text-sm font-bold border-b-2 transition-all flex items-center gap-2 shrink-0 rounded-t-xl hover:text-brand-blue">
+                        <i class="fa-solid fa-plane text-brand-cyan"></i> Flights
+                    </button>
+                    <button id="btn-tab-trains" onclick="switchMainTab('trains')" class="border-b-2 border-transparent text-gray-500 px-4 py-3 text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shrink-0 rounded-t-xl hover:text-brand-blue">
+                        <i class="fa-solid fa-train text-brand-blue"></i> Trains
+                    </button>
+                    <button id="btn-tab-freshup" onclick="switchMainTab('freshup')" class="border-b-2 border-transparent text-gray-500 px-4 py-3 text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shrink-0 rounded-t-xl hover:text-brand-blue">
+                        <i class="fa-solid fa-hotel text-indigo-500"></i> Fresh-Up Stays
+                    </button>
+                    <button id="btn-tab-kerala" onclick="switchMainTab('kerala')" class="border-b-2 border-transparent text-gray-500 px-4 py-3 text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shrink-0 rounded-t-xl hover:text-brand-blue">
+                        <i class="fa-solid fa-palmtree text-emerald-600"></i> Kerala Tours
+                    </button>
+                    <button id="btn-tab-rentals" onclick="switchMainTab('rentals')" class="border-b-2 border-transparent text-gray-500 px-4 py-3 text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shrink-0 rounded-t-xl hover:text-brand-blue">
+                        <i class="fa-solid fa-car text-amber-500"></i> Rentals & Fleet
+                    </button>
+                </div>
+
+                <!-- TAB 1: FLIGHT SEARCH FORM -->
+                <div id="tab-content-flights" class="tab-content">
+                    <form onsubmit="handleFlightSearch(event)" class="space-y-4">
+                        <div class="flex items-center gap-6 mb-2 text-xs font-semibold text-gray-600">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="flight-trip-type" value="one-way" checked onchange="toggleFlightReturnDate(false)" class="text-brand-blue focus:ring-brand-blue">
+                                One Way
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="flight-trip-type" value="round-trip" onchange="toggleFlightReturnDate(true)" class="text-brand-blue focus:ring-brand-blue">
+                                Round Trip
+                            </label>
+                            <span class="ml-auto text-gray-400 hidden sm:inline"><i class="fa-solid fa-bolt text-amber-500"></i> Instant WhatsApp Booking</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">From Airport</label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-plane-departure absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                                    <select id="flight-from" class="w-full bg-gray-50 border border-gray-200 rounded-xl pl-9 pr-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                                        <option value="MAA - Chennai International Airport">Chennai (MAA)</option>
+                                        <option value="COK - Cochin International Airport">Kochi (COK)</option>
+
+                                        <option value="TRV - Trivandrum International Airport">Trivandrum (TRV)</option>
+
+                                        <option value="DEL - Indira Gandhi Intl Airport, Delhi">Delhi (DEL)</option>
+
+                                        <option value="BLR - Kempegowda Intl Airport, Bangalore">Bangalore (BLR)</option>
+
+                                        <option value="BOM - Chhatrapati Shivaji Airport, Mumbai">Mumbai (BOM)</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">To Airport</label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-plane-arrival absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                                    <select id="flight-to" class="w-full bg-gray-50 border border-gray-200 rounded-xl pl-9 pr-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                                        <option value="COK - Cochin International Airport">Kochi (COK)</option>
+
+                                        <option value="MAA - Chennai International Airport">Chennai (MAA)</option>
+
+                                        <option value="TRV - Trivandrum International Airport">Trivandrum (TRV)</option>
+
+                                        <option value="CCJ - Calicut International Airport">Calicut (CCJ)</option>
+
+                                        <option value="DEL - Indira Gandhi Intl Airport, Delhi">Delhi (DEL)</option>
+
+                                        <option value="BLR - Kempegowda Intl Airport, Bangalore">Bangalore (BLR)</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Departure Date</label>
+                                <input type="date" id="flight-date" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Passengers & Class</label>
+                                <select id="flight-passengers" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                                    <option value="1 Passenger, Economy">1 Passenger, Economy</option>
+                                    <option value="2 Passengers, Economy">2 Passengers, Economy</option>
+                                    <option value="3+ Passengers, Family">3+ Passengers, Family</option>
+                                    <option value="1 Passenger, Business">1 Passenger, Business</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="flight-return-container" class="hidden">
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Return Date</label>
+                            <input type="date" id="flight-return-date" class="w-full sm:w-1/2 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                        </div>
+
+                        <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <p class="text-xs text-gray-400"><i class="fa-solid fa-circle-info text-brand-blue"></i> Real-time airline schedule & WhatsApp booking engine</p>
+                            <button type="submit" class="w-full sm:w-auto bg-brand-blue hover:bg-brand-navy text-white font-extrabold px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-magnifying-glass"></i> Search Flights
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- TAB 2: TRAIN SEARCH FORM -->
+                <div id="tab-content-trains" class="tab-content hidden">
+                    <form onsubmit="handleTrainSearch(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">From Station</label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-train-subway absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                                    <select id="train-from" class="w-full bg-gray-50 border border-gray-200 rounded-xl pl-9 pr-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                                        <option value="MAS - Chennai Central">Chennai Central (MAS)</option>
+                                        <option value="MS - Chennai Egmore">Chennai Egmore (MS)</option>
+
+                                        <option value="ERS - Ernakulam Junction">Ernakulam / Kochi (ERS)</option>
+
+                                        <option value="TVC - Trivandrum Central">Trivandrum Central (TVC)</option>
+
+                                        <option value="SBC - Bangalore City">Bangalore City (SBC)</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">To Station</label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-location-dot absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                                    <select id="train-to" class="w-full bg-gray-50 border border-gray-200 rounded-xl pl-9 pr-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                                        <option value="ERS - Ernakulam Town / Kochi">Ernakulam / Kochi (ERS)</option>
+
+                                        <option value="ALLP - Alleppey">Alleppey (ALLP)</option>
+
+                                        <option value="TVC - Trivandrum Central">Trivandrum Central (TVC)</option>
+
+                                        <option value="MAS - Chennai Central">Chennai Central (MAS)</option>
+
+                                        <option value="MDU - Madurai Junction">Madurai Junction (MDU)</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Journey Date</label>
+                                <input type="date" id="train-date" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Quota & Class</label>
+                                <select id="train-class" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                                    <option value="All Classes (1A, 2A, 3A, SL, CC)">All Classes</option>
+                                    <option value="3A - 3 Tier AC">3A - 3 Tier AC</option>
+                                    <option value="2A - 2 Tier AC">2A - 2 Tier AC</option>
+                                    <option value="SL - Sleeper Class">SL - Sleeper Class</option>
+                                    <option value="CC - AC Chair Car">CC - AC Chair Car (Vande Bharat)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <p class="text-xs text-gray-400"><i class="fa-solid fa-shield-halved text-brand-blue"></i> Live PNR status, seat availability & instant WhatsApp booking</p>
+                            <button type="submit" class="w-full sm:w-auto bg-brand-navy hover:bg-brand-blue text-white font-extrabold px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-train"></i> Search Trains
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- TAB 3: FRESH-UP STAYS FORM -->
+                <div id="tab-content-freshup" class="tab-content hidden">
+                    <form onsubmit="handleFreshUpSearch(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Location Hub</label>
+                                <select id="room-location" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                                    <option value="Chennai Airport Hub (Pallavaram)">Near Chennai Airport Terminal (MAA)</option>
+                                    <option value="Chennai Central Hub">Near Chennai Central Station (MAS)</option>
+                                    <option value="Chennai Egmore Hub">Near Chennai Egmore Station (MS)</option>
+
+                                    <option value="Kochi Airport Hub (Nedumbassery)">Near Kochi Airport (COK)</option>
+
+                                    <option value="Trivandrum Central Hub">Near Trivandrum Central (TVC)</option>
+
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Check-In Date</label>
+                                <input type="date" id="room-date" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Duration Slot</label>
+                                <select id="room-hours" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                                    <option value="3 Hours Transit Fresh-Up Slot">3 Hours Express Fresh-Up</option>
+                                    <option value="6 Hours Transit Fresh-Up Slot">6 Hours Standard Transit</option>
+                                    <option value="12 Hours Day/Night Slot">12 Hours Extended Stay</option>
+                                    <option value="Full 24 Hours Hotel Stay">Full 24-Hour Hotel Room</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="pt-2 flex justify-end">
+                            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md flex items-center gap-2">
+                                <i class="fa-solid fa-bed"></i> Check Hourly Room Availability
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- TAB 4: KERALA TOURS FORM -->
+                <div id="tab-content-kerala" class="tab-content hidden">
+                    <form onsubmit="handleKeralaSearch(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Destination</label>
+                                <select id="kerala-destination" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                                    <option value="All Kerala Packages">All Kerala Top Destinations</option>
+                                    <option value="Munnar Tea Gardens & Hills">Munnar Hill Station</option>
+                                    <option value="Alleppey Backwaters & Houseboat">Alleppey Houseboats</option>
+
+                                    <option value="Wayanad Waterfalls & Caves">Wayanad Hills</option>
+
+                                    <option value="Thekkady Periyar Wildlife">Thekkady Wildlife</option>
+
+                                    <option value="Varkala Red Cliff Beach">Varkala Beach</option>
+
+                                    <option value="Kovalam & Trivandrum">Kovalam Beach</option>
+
+                                    <option value="Kochi & Fort Cochin Heritage">Kochi Heritage</option>
+
+                                    <option value="Kumarakom Lagoon">Kumarakom Resorts</option>
+
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Duration</label>
+                                <select id="kerala-duration" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                                    <option value="Any Duration">Any Duration</option>
+                                    <option value="2 Days / 1 Night Short Tour">2 Days / 1 Night</option>
+                                    <option value="3 Days / 2 Nights Classic Tour">3 Days / 2 Nights</option>
+                                    <option value="5+ Days Complete Grand Kerala">5+ Days Grand Circuit</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Travelers Count</label>
+                                <select id="kerala-guests" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                                    <option value="2 Persons (Couple)">2 Persons (Couple)</option>
+                                    <option value="Family (3-5 Persons)">Family (3-5 Persons)</option>
+                                    <option value="Group / Corporate (6+)">Group (6+ Persons)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="pt-2 flex justify-end">
+                            <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md flex items-center gap-2">
+                                <i class="fa-solid fa-tree"></i> View Kerala Tour Packages
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- TAB 5: RENTALS FORM -->
+                <div id="tab-content-rentals" class="tab-content hidden">
+                    <form onsubmit="handleRentalSearch(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Vehicle Type</label>
+                                <select id="rental-vehicle" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                                    <option value="Car + Local Chauffeur (Innova / Sedan)">Car + Professional Driver</option>
+                                    <option value="Self-Drive Hatchback (Swift / Baleno)">Self-Drive Hatchback (@ ₹1,500/day)</option>
+
+                                    <option value="Self-Drive SUV (Creta / Thar / Innova)">Self-Drive SUV (@ ₹2,500/day)</option>
+
+                                    <option value="Two-Wheeler Scooter (Activa / Access)">Scooter / Bike Rental (@ ₹450/day)</option>
+
+                                    <option value="Cruiser Bike (Royal Enfield Classic 350)">Royal Enfield Cruiser (@ ₹900/day)</option>
+
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Start Date</label>
+                                <input type="date" id="rental-start" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Rental Duration</label>
+                                <select id="rental-duration" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-bold text-brand-navy focus:outline-none focus:border-brand-blue focus:bg-white">
+                                    <option value="1 Day / 24 Hours">1 Day (24 Hours)</option>
+                                    <option value="2-3 Days Road Trip">2-3 Days</option>
+                                    <option value="1 Week Long Rental">1 Week Long Rental</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="pt-2 flex justify-end">
+                            <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-white font-extrabold px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md flex items-center gap-2">
+                                <i class="fa-solid fa-car-side"></i> Check Vehicle Rates on WhatsApp
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH RESULTS DISPLAY CONTAINER (POPULED DYNAMICALLY BY JS) -->
+    <section id="results-section" class="py-12 bg-white hidden border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="results-header" class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold px-3 py-1 rounded-full mb-2">
+                        <i class="fa-solid fa-bolt text-amber-500"></i> API-Ready Search Engine (Demo Data Mode)
+                    </div>
+                    <h2 id="results-title" class="text-2xl sm:text-3xl font-extrabold font-outfit text-brand-navy">Search Results</h2>
+                    <p id="results-subtitle" class="text-sm text-gray-500">Showing schedules & live WhatsApp booking options</p>
+                </div>
+                <button onclick="closeResults()" class="text-xs font-bold text-gray-400 hover:text-gray-600 border border-gray-200 px-3 py-1.5 rounded-lg">
+                    <i class="fa-solid fa-xmark"></i> Clear Results
+                </button>
+            </div>
+
+            <div id="results-cards-grid" class="space-y-4">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPANDED CORE SERVICES SECTION -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-xs sm:text-sm font-bold text-brand-blue uppercase tracking-wider">All-in-One Travel Solutions</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-outfit text-brand-navy">Integrated Chennai & Kerala Travel Services</h2>
+                <div class="w-16 h-1 bg-brand-cyan mx-auto rounded-full"></div>
+                <p class="text-gray-500 text-sm sm:text-base">Everything you need for seamless transit, city exploration, airport transfers, and memorable South India vacations.</p>
+            </div>
+
+            <!-- Services 9-Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Service 1: Airport Transfers -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-5 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-plane-arrival text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Airport Pickup & Drop</h3>
+                    <p class="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4">Punctual, 24/7 flight-tracked transfers at Chennai (MAA), Kochi (COK), Trivandrum (TRV) & Calicut (CCJ).</p>
+                    <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I'd%20like%20to%20book%20an%20Airport%20Pickup/Drop%20service." target="_blank" class="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1">
+                        Book Airport Transfer <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2: Railway Station Transfers -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-5 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-train-subway text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Railway Station Pickup & Drop</h3>
+                    <p class="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4">On-time pickup from Chennai Central, Egmore, Ernakulam, Trivandrum & major junctions with baggage assistance.</p>
+                    <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I'd%20like%20to%20book%20a%20Railway%20Station%20Pickup/Drop." target="_blank" class="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1">
+                        Book Station Pickup <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3: Hourly Fresh-Up Rooms -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-5 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-clock text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Hourly Fresh-Up Transit Rooms</h3>
+                    <p class="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4">Pay hourly for 3, 6, or 12-hour clean room slots near Chennai Airport & stations without paying full 24-hr rates.</p>
+                    <a href="#fresh-up" class="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1">
+                        Explore Rooms <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4: Hotel & Resort Bookings -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-5 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-hotel text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Hotel & Resort Bookings</h3>
+                    <p class="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4">Discounted corporate & family stays in handpicked 3-star, 4-star & luxury heritage resorts across Tamil Nadu & Kerala.</p>
+                    <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I'd%20like%20assistance%20booking%20a%20Hotel/Resort." target="_blank" class="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1">
+                        Book Hotels <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5: Car Rental & Car + Driver -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-5 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-car-side text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Car + Driver & Self-Drive Cars</h3>
+                    <p class="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4">Air-conditioned Sedans, Innova Crysta & SUVs with professional local chauffeurs or self-drive rentals.</p>
+                    <a href="#transport" class="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1">
+                        View Fleet <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6: Bike Rentals -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-5 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-motorcycle text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Two-Wheeler & Bike Rentals</h3>
+                    <p class="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4">Well-maintained Honda Activa scooters and Royal Enfield Classic 350 cruisers for easy city commuting.</p>
+                    <a href="#transport" class="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1">
+                        Rent Two-Wheeler <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 7: Local Guide Services -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-5 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-microphone-lines text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Certified Tour Guides</h3>
+                    <p class="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4">Certified, multi-lingual guides (English, Hindi, Tamil, Malayalam) for deep historical and temple insights.</p>
+                    <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I'd%20like%20to%20hire%20a%20certified%20Tour%20Guide." target="_blank" class="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1">
+                        Hire Guide <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 8: Food & Travel Assistance -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-5 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-utensils text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Food & Travel Assistance</h3>
+                    <p class="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4">Authentic local South Indian food trails, special dietary arrangements, and 24/7 trip coordinator support.</p>
+                    <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I%20need%20travel%20and%20food%20assistance." target="_blank" class="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1">
+                        Get Assistance <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 9: Kerala & Chennai Tour Packages -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-5 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-map-location-dot text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Chennai & Kerala Tour Packages</h3>
+                    <p class="text-xs sm:text-sm text-gray-500 leading-relaxed mb-4">Curated packages spanning Chennai temples, Mahabalipuram heritage, Munnar hills, and Alleppey backwaters.</p>
+                    <a href="#kerala-packages" class="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1">
+                        Explore All Packages <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FRESH-UP ROOMS SECTION -->
+    <section id="fresh-up" class="py-20 bg-brand-light/40 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80" alt="Fresh room bathroom" class="rounded-2xl shadow-md w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80" alt="Fresh room bed" class="rounded-2xl shadow-md w-full h-64 object-cover mt-8">
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 bg-brand-blue text-white p-6 rounded-2xl shadow-xl max-w-xs">
+                        <p class="text-2xl font-bold font-outfit">Pay Hourly!</p>
+                        <p class="text-xs text-gray-100 mt-1">Don't pay for a full 24-hour stay for a 3-hour airport or railway transit stop.</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs sm:text-sm font-bold text-brand-blue uppercase tracking-wider">Hourly Transit Stays</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-outfit text-brand-navy">Premium Transit Fresh-Up Rooms</h3>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        Arriving at Chennai or Kochi and need a clean place to shower, rest, and change before your next flight or connecting train? TA Travels offers premium <strong>Fresh-Up Rooms</strong> strategically located near <strong>Chennai Airport, Central Station, Egmore, and Kochi Airport</strong>.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-start gap-3">
+                            <div class="text-brand-cyan mt-1"><i class="fa-solid fa-clock text-lg"></i></div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy text-sm">3, 6, & 12 Hour Slots</h4>
+                                <p class="text-xs text-gray-500">Flexible hourly pricing starting @ ₹799.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="text-brand-cyan mt-1"><i class="fa-solid fa-shower text-lg"></i></div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy text-sm">Hot Shower & Toiletries</h4>
+                                <p class="text-xs text-gray-500">Immaculate private bathrooms & towels.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="text-brand-cyan mt-1"><i class="fa-solid fa-wifi text-lg"></i></div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy text-sm">High-Speed Wi-Fi</h4>
+                                <p class="text-xs text-gray-500">Stay connected for remote work.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="text-brand-cyan mt-1"><i class="fa-solid fa-suitcase-rolling text-lg"></i></div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy text-sm">Secure Baggage Storage</h4>
+                                <p class="text-xs text-gray-500">Safe rooms to store your luggage.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I'd%20like%20to%20book%20a%20Fresh-Up%20Room.%20Can%20you%20share%20rates%20and%20availability?" 
+                           target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsappHover text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-md">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <span>Check Room Availability on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CHENNAI TOUR PACKAGES -->
+    <section id="packages" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-xs sm:text-sm font-bold text-brand-blue uppercase tracking-wider">Explore Tamil Nadu</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-outfit text-brand-navy">Curated Chennai & Temple Tours</h2>
+                <div class="w-16 h-1 bg-brand-cyan mx-auto rounded-full"></div>
+                <p class="text-gray-500 text-sm sm:text-base">Explore historical architecture, UNESCO heritage beaches, and ancient majestic temples starting from Chennai.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Package 1 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56">
+                        <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80" alt="Marina Beach Chennai" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-brand-navy text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">1 Day Tour</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div class="space-y-4 mb-6">
+                            <h3 class="text-xl font-bold text-brand-navy font-outfit">Chennai City Heritage Tour</h3>
+                            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">Experience Kapaleeshwarar Temple, Marina Beach Promenade, Fort St. George & Santhome Cathedral.</p>
+                            <ul class="space-y-2 text-xs text-gray-600">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-cyan"></i> Kapaleeshwarar Temple (Mylapore)</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-cyan"></i> Private AC vehicle & driver included</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I'd%20like%20to%20book%20the%201-Day%20Chennai%20City%20Heritage%20Tour." 
+                           target="_blank" class="w-full bg-brand-navy hover:bg-brand-blue text-white text-center font-bold py-3 rounded-xl transition-colors block text-xs sm:text-sm">
+                            Enquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56">
+                        <img src="https://images.unsplash.com/photo-1600100398055-124e57517a9e?auto=format&fit=crop&w=800&q=80" alt="Mahabalipuram Shore Temple" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-brand-blue text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">2 Days Tour</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div class="space-y-4 mb-6">
+                            <h3 class="text-xl font-bold text-brand-navy font-outfit">Mahabalipuram & Kanchipuram</h3>
+                            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">UNESCO Shore Temple rock monuments and Kanchipuram silk saree weaving heritage.</p>
+                            <ul class="space-y-2 text-xs text-gray-600">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-cyan"></i> Shore Temple & Five Rathas</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-cyan"></i> Kanchipuram Silk Saree Weavers</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I'd%20like%20to%20book%20the%202-Day%20Mahabalipuram%20and%20Kanchipuram%20Tour." 
+                           target="_blank" class="w-full bg-brand-navy hover:bg-brand-blue text-white text-center font-bold py-3 rounded-xl transition-colors block text-xs sm:text-sm">
+                            Enquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80" alt="South India Temple" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-brand-cyan text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">3-5 Days Tour</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div class="space-y-4 mb-6">
+                            <h3 class="text-xl font-bold text-brand-navy font-outfit">South India Heritage Circuit</h3>
+                            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">Pondicherry French Colony, Auroville, and Tirupati Balaji Sheegra Darshan trip.</p>
+                            <ul class="space-y-2 text-xs text-gray-600">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-cyan"></i> Tirupati Balaji Darshan Assistance</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-cyan"></i> Premium 3-star/4-star hotel stays</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I'd%20like%20to%20discuss%20a%20Custom%203-5%20Days%20South%20India%20Heritage%20Tour." 
+                           target="_blank" class="w-full bg-brand-navy hover:bg-brand-blue text-white text-center font-bold py-3 rounded-xl transition-colors block text-xs sm:text-sm">
+                            Enquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- KERALA TOUR PACKAGES SECTION (NEW DEDICATED SECTION) -->
+    <section id="kerala-packages" class="py-20 bg-emerald-50/40 border-t border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full">
+                    🌴 God's Own Country
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-outfit text-brand-navy">Specially Curated Kerala Tour Packages</h2>
+                <div class="w-16 h-1 bg-emerald-500 mx-auto rounded-full"></div>
+                <p class="text-gray-600 text-sm sm:text-base">Experience misty tea hills, tranquil backwater houseboats, wildlife sanctuaries, and cliffside beaches across 10 top destinations.</p>
+            </div>
+
+            <!-- 10 Kerala Package Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="kerala-cards-container">
+                <!-- Cards rendered dynamically via JS / statically defined for SEO fallback -->
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSPORT HUB: CARS & BIKES -->
+    <section id="transport" class="py-20 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+            
+            <!-- CAR + DRIVER SECTION -->
+            <div id="car-driver" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs sm:text-sm font-bold text-brand-blue uppercase tracking-wider">Chauffeur Driven Fleet</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-outfit text-brand-navy">Private Car + Expert Local Driver</h2>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        Avoid traffic hassles in Chennai and Kerala. Our private <strong>Car + Driver service</strong> offers AC Sedans, Innova Crysta, and Tempo Travellers driven by courteous, multi-lingual local chauffeurs.
+                    </p>
+                    <div class="space-y-2.5 text-xs sm:text-sm text-gray-700 font-medium">
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-cyan"></i> <span>English, Hindi, Tamil & Malayalam speaking drivers</span></div>
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-cyan"></i> <span>Flight-tracked airport pickups & guaranteed on-time service</span></div>
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-cyan"></i> <span>Dzire, Etios, Ertiga, Innova Crysta & Tempo Traveller</span></div>
+                    </div>
+                    <div class="pt-2">
+                        <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I'd%20like%20to%20book%20a%20Car%20with%20Driver.%20Can%20you%20share%20rates?" 
+                           target="_blank" class="inline-flex items-center gap-2 bg-brand-whatsapp text-white font-bold px-7 py-3 rounded-xl transition-all shadow-md hover:bg-brand-whatsappHover">
+                            <i class="fab fa-whatsapp text-lg"></i> Book Car + Driver
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-6">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80" alt="Innova Car Driver" class="rounded-2xl shadow-xl w-full h-[360px] object-cover">
+                </div>
+            </div>
+
+            <!-- CAR RENTALS (SELF-DRIVE) -->
+            <div id="car-rental" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center lg:flex-row-reverse">
+                <div class="lg:col-span-6 lg:order-2 space-y-6">
+                    <span class="text-xs sm:text-sm font-bold text-brand-blue uppercase tracking-wider">Self-Drive Rentals</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-outfit text-brand-navy">Premium Self-Drive Car Rentals</h2>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        Enjoy complete freedom exploring South India. Clean, sanitized hatchbacks, sedans, and SUVs delivered directly to Chennai Airport or central hubs.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="border border-gray-200 p-4 rounded-xl bg-white">
+                            <p class="text-xs text-gray-400 font-bold uppercase">Hatchbacks & Sedans</p>
+                            <p class="text-sm font-bold text-brand-navy mt-1">Starting @ ₹1,500/Day</p>
+                        </div>
+                        <div class="border border-gray-200 p-4 rounded-xl bg-white">
+                            <p class="text-xs text-gray-400 font-bold uppercase">SUVs & Luxury</p>
+                            <p class="text-sm font-bold text-brand-navy mt-1">Starting @ ₹2,500/Day</p>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I'd%20like%20to%20rent%20a%20Self-Drive%20Car.%20Can%20you%20share%20available%20models?" 
+                           target="_blank" class="inline-flex items-center gap-2 bg-brand-whatsapp text-white font-bold px-7 py-3 rounded-xl transition-all shadow-md hover:bg-brand-whatsappHover">
+                            <i class="fab fa-whatsapp text-lg"></i> Rent Self-Drive Car
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 lg:order-1">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80" alt="Self Drive Car" class="rounded-2xl shadow-xl w-full h-[360px] object-cover">
+                </div>
+            </div>
+
+            <!-- BIKE RENTALS -->
+            <div id="bike-rental" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs sm:text-sm font-bold text-brand-blue uppercase tracking-wider">Fast City Commute</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-outfit text-brand-navy">Two-Wheeler & Bike Rentals</h2>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        Zip past city traffic and ride along East Coast Road (ECR). Budget-friendly scooter and bike rentals starting @ ₹450/day.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white text-brand-navy text-xs font-bold px-3 py-1.5 rounded-lg border border-gray-200">Honda Activa / Access 125</span>
+                        <span class="bg-white text-brand-navy text-xs font-bold px-3 py-1.5 rounded-lg border border-gray-200">Royal Enfield Classic 350</span>
+                        <span class="bg-white text-brand-navy text-xs font-bold px-3 py-1.5 rounded-lg border border-gray-200">Yamaha FZ / Pulsar</span>
+                    </div>
+                    <div class="pt-2">
+                        <a href="https://wa.me/919400471162?text=Hi%20TA%20Travels,%20I'd%20like%20to%20rent%20a%20two-wheeler/bike." 
+                           target="_blank" class="inline-flex items-center gap-2 bg-brand-whatsapp text-white font-bold px-7 py-3 rounded-xl transition-all shadow-md hover:bg-brand-whatsappHover">
+                            <i class="fab fa-whatsapp text-lg"></i> Rent Two-Wheeler
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-6">
+                    <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=80" alt="Bike Rental" class="rounded-2xl shadow-xl w-full h-[360px] object-cover">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="py-20 bg-brand-navy text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-xs sm:text-sm font-bold text-brand-cyan uppercase tracking-wider">Smooth & Transparent</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-outfit text-white">How to Book with TA Travels</h2>
+                <div class="w-16 h-1 bg-brand-cyan mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-3 bg-white/5 p-6 rounded-2xl border border-white/10">
+                    <div class="w-12 h-12 rounded-xl bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-xl font-bold font-outfit">01</div>
+                    <h3 class="text-base font-bold">Select Service</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">Search flights, trains, tour packages, hourly rooms, or vehicle rentals.</p>
+                </div>
+                <div class="space-y-3 bg-white/5 p-6 rounded-2xl border border-white/10">
+                    <div class="w-12 h-12 rounded-xl bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-xl font-bold font-outfit">02</div>
+                    <h3 class="text-base font-bold">WhatsApp Connect</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">Click any booking button to auto-fill a detailed WhatsApp enquiry message.</p>
+                </div>
+                <div class="space-y-3 bg-white/5 p-6 rounded-2xl border border-white/10">
+                    <div class="w-12 h-12 rounded-xl bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-xl font-bold font-outfit">03</div>
+                    <h3 class="text-base font-bold">Instant Quote</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">Receive transparent, upfront quotes with zero hidden commissions within 3 mins.</p>
+                </div>
+                <div class="space-y-3 bg-white/5 p-6 rounded-2xl border border-white/10">
+                    <div class="w-12 h-12 rounded-xl bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-xl font-bold font-outfit">04</div>
+                    <h3 class="text-base font-bold">Enjoy Your Trip</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">Sit back and let our professional drivers, guides, and room partners care for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM & BUSINESS DETAILS -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <div class="lg:col-span-5 space-y-6">
+                <div class="space-y-3">
+                    <span class="text-xs sm:text-sm font-bold text-brand-blue uppercase tracking-wider">Reach Out</span>
+                    <h2 class="text-3xl font-extrabold font-outfit text-brand-navy">We'd Love to Assist You</h2>
+                    <p class="text-gray-500 text-sm">Send us a direct message or visit our office near Chennai International Airport Terminal.</p>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-brand-light text-brand-blue flex items-center justify-center shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4 class="font-bold text-brand-navy">Office Address</h4>
+                            <p class="text-gray-500 mt-0.5">TA Travels, Outer Ring Rd, Near Chennai International Airport Terminal, Pallavaram, Chennai, Tamil Nadu - 600043</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-brand-light text-brand-blue flex items-center justify-center shrink-0"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4 class="font-bold text-brand-navy">Direct Helpline</h4>
+                            <p class="text-gray-500 mt-0.5"><a href="tel:+919400471162" class="hover:text-brand-blue font-semibold">+91 94004 71162</a></p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-brand-light text-brand-blue flex items-center justify-center shrink-0"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4 class="font-bold text-brand-navy">Email Address</h4>
+                            <p class="text-gray-500 mt-0.5"><a href="mailto:booking@tatravels.in" class="hover:text-brand-blue font-semibold">booking@tatravels.in</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-gray-50 p-6 sm:p-8 rounded-3xl border border-gray-100">
+                <h3 class="text-xl font-bold font-outfit text-brand-navy mb-1">Instant Travel Enquiry Planner</h3>
+                <p class="text-xs text-gray-400 mb-6">Fill in your requirements to generate a pre-drafted WhatsApp enquiry message.</p>
+                
+                <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Your Name</label>
+                            <input type="text" id="contact-name" placeholder="John Doe" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Phone / WhatsApp</label>
+                            <input type="tel" id="contact-phone" placeholder="+91 98765 43210" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Service Needed</label>
+                            <select id="contact-service" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue">
+                                <option value="Flight Ticket Booking">Flight Ticket Booking</option>
+                                <option value="Train Ticket Booking">Train Ticket Booking</option>
+                                <option value="Kerala Tour Package">Kerala Tour Package</option>
+                                <option value="Chennai City Tour">Chennai City Tour</option>
+                                <option value="Transit Fresh-Up Room">Transit Fresh-Up Room</option>
+                                <option value="Car + Local Chauffeur">Car + Local Chauffeur</option>
+                                <option value="Self-Drive Car Rental">Self-Drive Car Rental</option>
+                                <option value="Bike Rental">Bike Rental</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Date of Travel</label>
+                            <input type="date" id="contact-date" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Trip Details / Custom Requests</label>
+                        <textarea id="contact-message" rows="3" placeholder="Mention route, flight details, or specific preferences..." class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-whatsapp hover:bg-brand-whatsappHover text-white font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg">
+                        <i class="fab fa-whatsapp text-lg"></i> Direct WhatsApp Enquiry
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-navy text-white pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/5">
+            
+            <div class="lg:col-span-5 space-y-5">
+                <div class="h-12 flex items-center">
+                    <img src="logo.png" alt="TA Travels Logo" class="h-12 w-auto object-contain brightness-0 invert" onerror="this.src='https://via.placeholder.com/180x60?text=TA+Travels';">
+                </div>
+                <p class="text-xs sm:text-sm text-gray-400 max-w-sm leading-relaxed">
+                    TA Travels is South India's premier travel hub, providing flight & train search, hourly fresh-up rooms, car/bike rentals, local guides, and custom Chennai & Kerala tour packages.
+                </p>
+            </div>
+
+            <div class="lg:col-span-3 space-y-3">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-brand-cyan">Fleet & Stays</h4>
+                <ul class="space-y-2 text-xs text-gray-400">
+                    <li><a href="#ota-search" class="hover:text-brand-cyan">Flight Ticket Booking</a></li>
+                    <li><a href="#ota-search" class="hover:text-brand-cyan">Train Ticket Booking</a></li>
+                    <li><a href="#fresh-up" class="hover:text-brand-cyan">Hourly Fresh-Up Rooms</a></li>
+                    <li><a href="#transport" class="hover:text-brand-cyan">Car + Driver Chauffeurs</a></li>
+                    <li><a href="#transport" class="hover:text-brand-cyan">Self-Drive Car Rentals</a></li>
+                </ul>
+            </div>
+
+            <div class="lg:col-span-4 space-y-3">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-brand-cyan">Tour Packages</h4>
+                <ul class="space-y-2 text-xs text-gray-400">
+                    <li><a href="#kerala-packages" class="hover:text-brand-cyan">Munnar Tea Hills Tour</a></li>
+                    <li><a href="#kerala-packages" class="hover:text-brand-cyan">Alleppey Houseboat Backwaters</a></li>
+                    <li><a href="#kerala-packages" class="hover:text-brand-cyan">Wayanad & Thekkady Wildlife</a></li>
+                    <li><a href="#packages" class="hover:text-brand-cyan">Chennai City Heritage 1-Day Tour</a></li>
+                    <li><a href="#packages" class="hover:text-brand-cyan">Mahabalipuram UNESCO Tour</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+            <p>&copy; 2026 TA Travels. All Rights Reserved. Near Chennai International Airport Terminal.</p>
+            <p>Direct WhatsApp Bookings: <a href="tel:+919400471162" class="hover:text-brand-cyan">+91 94004 71162</a></p>
+        </div>
+    </footer>
+
+    <!-- PACKAGE DETAILS MODAL -->
+    <div id="package-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 relative shadow-2xl">
+            <button onclick="closePackageModal()" class="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-full flex items-center justify-center text-sm">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODULAR API ARCHITECTURE & INTERACTIVE JAVASCRIPT -->
+    <script>
+        /* ==========================================================================
+           CONFIG & API ARCHITECTURE
+           ========================================================================== */
+        const CONFIG = {
+            useMockData: true, // Set to false when connecting live production APIs
+            whatsappNumber: '9400471162',
+            apiKeys: {
+                amadeusFlightApiKey: 'YOUR_AMADEUS_API_KEY_HERE',
+                irctcTrainApiKey: 'YOUR_RAILWAY_API_KEY_HERE'
+            }
+        };
+
+        const waBaseUrl = "https://wa.me/91" + CONFIG.whatsappNumber + "?text=";
+
+        /* ==========================================================================
+           1. KERALA PACKAGES DATA SERVICE
+           ========================================================================== */
+        const keralaPackagesData = [
+            {
+                id: 'munnar',
+                title: 'Munnar Hill Station Escapes',
+                desc: 'Misty tea plantations, Mattupetty Dam, Eravikulam National Park & majestic waterfalls.',
+                price: '₹5,999',
+                duration: '3 Days / 2 Nights',
+                image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=800&q=80',
+                highlights: ['Mattupetty Dam & Kundala Lake', 'Tea Museum & Plantation Walk', 'Eravikulam Nilgiri Tahr Sanctuary', 'Private AC Vehicle & Resort Stay']
+            },
+            {
+                id: 'alleppey',
+                title: 'Alleppey Houseboat Backwaters',
+                desc: 'Overnight luxury houseboat cruise through Vembanad Lake & serene palm-fringed backwater canals.',
+                price: '₹6,499',
+                duration: '2 Days / 1 Night',
+                image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80',
+                highlights: ['Private Deluxe Houseboat', 'Traditional Kerala Meals Onboard', 'Sunset Village Cruise', 'AC Bedrooms & Onboard Chef']
+            },
+            {
+                id: 'wayanad',
+                title: 'Wayanad Wildlife & Mist',
+                desc: 'Edakkal Caves prehistoric petroglyphs, Banasura Sagar Dam, Chembra Peak & spice trail walks.',
+                price: '₹6,999',
+                duration: '3 Days / 2 Nights',
+                image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80',
+                highlights: ['Banasura Earthen Dam', 'Edakkal Cave Exploration', 'Spice & Coffee Plantation Tour', 'Hillside Resort Stay']
+            },
+            {
+                id: 'thekkady',
+                title: 'Thekkady Periyar Sanctuary',
+                desc: 'Periyar Lake boat safari, elephant junction, spice garden tours & Kathakali cultural show.',
+                price: '₹5,499',
+                duration: '2 Days / 1 Night',
+                image: 'https://images.unsplash.com/photo-1609828913662-85888e23f97b?auto=format&fit=crop&w=800&q=80',
+                highlights: ['Periyar Wildlife Lake Cruise', 'Elephant Bathing & Feeding', 'Organic Spice Plantation Walk', 'Cultural Kathakali Show']
+            },
+            {
+                id: 'varkala',
+                title: 'Varkala Cliff Beach & Sunset',
+                desc: 'Dramatic red cliff views, Papanasam Beach, Janardhana Swamy Temple & cliffside cafe vibes.',
+                price: '₹4,999',
+                duration: '2 Days / 1 Night',
+                image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80',
+                highlights: ['Varkala Cliff Viewpoint', 'Papanasam Mineral Springs', 'Beach Resort Stay', '2000-Year-Old Temple Visit']
+            },
+            {
+                id: 'kovalam',
+                title: 'Kovalam Lighthouse Beach',
+                desc: 'Iconic red-and-white Lighthouse Beach, Hawah Beach, Samudra Beach & Ayurvedic wellness.',
+                price: '₹5,999',
+                duration: '3 Days / 2 Nights',
+                image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+                highlights: ['Lighthouse Climb & Panorama', 'Speedboat & Water Sports', 'Trivandrum Padmanabhaswamy Visit', 'Beachfront Hotel']
+            },
+            {
+                id: 'kochi',
+                title: 'Kochi & Fort Cochin Heritage',
+                desc: 'Chinese Fishing Nets, Mattancherry Dutch Palace, Jew Town Synagogue & colonial harbour cruise.',
+                price: '₹3,999',
+                duration: '2 Days / 1 Night',
+                image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80',
+                highlights: ['Chinese Fishing Nets Walk', 'Dutch Palace & Jew Town', 'Marine Drive Sunset Cruise', 'Heritage Boutique Hotel']
+            },
+            {
+                id: 'kumarakom',
+                title: 'Kumarakom Lagoon & Birds',
+                desc: 'Tranquil Vembanad lagoon resorts, Kumarakom Bird Sanctuary trails & canoe water rides.',
+                price: '₹7,499',
+                duration: '3 Days / 2 Nights',
+                image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
+                highlights: ['Lakefront Luxury Resort', 'Canoe Backwater Ride', 'Bird Sanctuary Guided Walk', 'Authentic Karimeen Meals']
+            },
+            {
+                id: 'vagamon',
+                title: 'Vagamon Pine Hills & Meadows',
+                desc: 'Rolling green meadows, Vagamon Pine Forest, Kurisumala Peak & serene Vagamon Lake.',
+                price: '₹4,999',
+                duration: '2 Days / 1 Night',
+                image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
+                highlights: ['Vagamon Pine Forest Trail', 'Grassy Hill Meadows', 'Vagamon Lake Boating', 'Cool Climate Retreat']
+            },
+            {
+                id: 'bekal',
+                title: 'Bekal Fort & Coastal Luxury',
+                desc: 'Historic Bekal Fort keyhole architecture overlooking Arabian Sea, Bekal Beach Park & estuaries.',
+                price: '₹7,999',
+                duration: '3 Days / 2 Nights',
+                image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80',
+                highlights: ['Bekal Fort Sunset Exploration', 'Kappil Beach & Estuary', 'Coastal Resort Luxury', 'Backwater Kayaking Options']
+            }
+        ];
+
+        /* ==========================================================================
+           2. FLIGHT SERVICE MODULE (API-READY)
+           ========================================================================== */
+        const flightService = {
+            async searchFlights(params) {
+                if (!CONFIG.useMockData) {
+                    // Production API fetch placeholder (Amadeus / Skyscanner)
+                    // const res = await fetch(`${CONFIG.flightApiEndpoint}?origin=${params.from}&destination=${params.to}...`);
+                    // return await res.json();
+                }
+                
+                // Return Realistic Structured Mock Data
+                return [
+                    {
+                        airline: 'IndiGo Airlines',
+                        code: '6E-6124',
+                        departureTime: '06:15 AM',
+                        arrivalTime: '07:35 AM',
+                        duration: '1h 20m',
+                        stops: 'Non-stop',
+                        price: '₹3,250',
+                        cabinClass: 'Economy',
+                        from: params.from,
+                        to: params.to
+                    },
+                    {
+                        airline: 'Air India',
+                        code: 'AI-568',
+                        departureTime: '11:40 AM',
+                        arrivalTime: '01:05 PM',
+                        duration: '1h 25m',
+                        stops: 'Non-stop',
+                        price: '₹3,890',
+                        cabinClass: 'Economy',
+                        from: params.from,
+                        to: params.to
+                    },
+                    {
+                        airline: 'Akasa Air',
+                        code: 'QP-1382',
+                        departureTime: '05:50 PM',
+                        arrivalTime: '07:15 PM',
+                        duration: '1h 25m',
+                        stops: 'Non-stop',
+                        price: '₹2,990',
+                        cabinClass: 'Economy',
+                        from: params.from,
+                        to: params.to
+                    }
+                ];
+            }
+        };
+
+        /* ==========================================================================
+           3. TRAIN SERVICE MODULE (API-READY)
+           ========================================================================== */
+        const trainService = {
+            async searchTrains(params) {
+                if (!CONFIG.useMockData) {
+                    // Production Railway API fetch placeholder
+                }
+
+                return [
+                    {
+                        trainName: 'Vande Bharat Express',
+                        trainNumber: '20633',
+                        departureTime: '05:50 AM',
+                        arrivalTime: '01:20 PM',
+                        duration: '7h 30m',
+                        runsOn: 'Daily except Thu',
+                        classes: [
+                            { code: 'CC', name: 'AC Chair Car', fare: '₹1,380', status: 'AVAILABLE - 42', statusColor: 'bg-emerald-100 text-emerald-800' },
+                            { code: 'EC', name: 'Executive Chair', fare: '₹2,460', status: 'AVAILABLE - 12', statusColor: 'bg-emerald-100 text-emerald-800' }
+                        ]
+                    },
+                    {
+                        trainName: 'Chennai - Alleppey SF Express',
+                        trainNumber: '12696',
+                        departureTime: '04:30 PM',
+                        arrivalTime: '05:45 AM (Next Day)',
+                        duration: '13h 15m',
+                        runsOn: 'Daily',
+                        classes: [
+                            { code: '3A', name: '3 Tier AC', fare: '₹1,150', status: 'AVAILABLE - 18', statusColor: 'bg-emerald-100 text-emerald-800' },
+                            { code: '2A', name: '2 Tier AC', fare: '₹1,620', status: 'RAC - 4', statusColor: 'bg-amber-100 text-amber-800' },
+                            { code: 'SL', name: 'Sleeper', fare: '₹430', status: 'AVAILABLE - 85', statusColor: 'bg-emerald-100 text-emerald-800' }
+                        ]
+                    },
+                    {
+                        trainName: 'Trivandrum Mail',
+                        trainNumber: '12623',
+                        departureTime: '07:45 PM',
+                        arrivalTime: '08:30 AM (Next Day)',
+                        duration: '12h 45m',
+                        runsOn: 'Daily',
+                        classes: [
+                            { code: '3A', name: '3 Tier AC', fare: '₹1,210', status: 'AVAILABLE - 29', statusColor: 'bg-emerald-100 text-emerald-800' },
+                            { code: '1A', name: '1st Class AC', fare: '₹2,840', status: 'AVAILABLE - 6', statusColor: 'bg-emerald-100 text-emerald-800' },
+                            { code: 'SL', name: 'Sleeper', fare: '₹450', status: 'WL - 12', statusColor: 'bg-rose-100 text-rose-800' }
+                        ]
+                    }
+                ];
+            }
+        };
+
+        /* ==========================================================================
+           4. DOM RENDERING & EVENT HANDLERS
+           ========================================================================== */
+        
+        // Render Kerala Cards on Load
+        function renderKeralaCards() {
+            const container = document.getElementById('kerala-cards-container');
+            container.innerHTML = keralaPackagesData.map(pkg => `
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm package-card transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-56">
+                            <img src="${pkg.image}" alt="${pkg.title}" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
+                                ${pkg.duration}
+                            </span>
+                            <span class="absolute bottom-4 right-4 bg-brand-navy/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-lg">
+                                Starting ${pkg.price}
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-brand-navy font-outfit">${pkg.title}</h3>
+                            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">${pkg.desc}</p>
+                            
+                            <div class="pt-2">
+                                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Highlights:</p>
+                                <ul class="space-y-1.5 text-xs text-gray-600">
+                                    ${pkg.highlights.slice(0, 3).map(h => `<li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> ${h}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 grid grid-cols-2 gap-3 mt-4">
+                        <button onclick="openPackageModal('${pkg.id}')" class="w-full bg-gray-100 hover:bg-gray-200 text-brand-navy font-bold py-2.5 rounded-xl transition-colors text-xs">
+                            View Package
+                        </button>
+                        <a href="${waBaseUrl}${encodeURIComponent(`Hi TA Travels, I would like to book/enquire about the ${pkg.title} (${pkg.duration}, ${pkg.price}). Please share details.`)}" 
+                           target="_blank" rel="noopener noreferrer"
+                           class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl transition-colors text-xs text-center flex items-center justify-center gap-1.5">
+                            <i class="fab fa-whatsapp"></i> Enquire
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Switch Tabs in OTA Widget
+        function switchMainTab(tabId) {
+            const tabs = ['flights', 'trains', 'freshup', 'kerala', 'rentals'];
+            tabs.forEach(t => {
+                document.getElementById('tab-content-' + t).classList.add('hidden');
+                const btn = document.getElementById('btn-tab-' + t);
+                btn.classList.remove('tab-active');
+                btn.classList.add('border-transparent', 'text-gray-500');
+            });
+
+            document.getElementById('tab-content-' + tabId).classList.remove('hidden');
+            const activeBtn = document.getElementById('btn-tab-' + tabId);
+            activeBtn.classList.add('tab-active');
+            activeBtn.classList.remove('border-transparent', 'text-gray-500');
+        }
+
+        function toggleFlightReturnDate(show) {
+            const container = document.getElementById('flight-return-container');
+            if (show) container.classList.remove('hidden');
+            else container.classList.add('hidden');
+        }
+
+        // Handle Flight Search Execution
+        async function handleFlightSearch(e) {
+            e.preventDefault();
+            const from = document.getElementById('flight-from').value;
+            const to = document.getElementById('flight-to').value;
+            const date = document.getElementById('flight-date').value || 'Tomorrow';
+            const pax = document.getElementById('flight-passengers').value;
+
+            const flights = await flightService.searchFlights({ from, to, date, pax });
+
+            const resultsSec = document.getElementById('results-section');
+            const resultsTitle = document.getElementById('results-title');
+            const resultsSubtitle = document.getElementById('results-subtitle');
+            const grid = document.getElementById('results-cards-grid');
+
+            resultsTitle.innerText = `Flight Search: ${from.split(' - ')[0]} ✈️ ${to.split(' - ')[0]}`;
+            resultsSubtitle.innerText = `Travel Date: ${date} • ${pax}`;
+
+            grid.innerHTML = flights.map(f => {
+                const waMsg = `Hi TA Travels, I want to book a Flight ticket:
+- Route: ${f.from} to ${f.to}
+- Airline: ${f.airline} (${f.code})
+- Date: ${date}
+- Timing: ${f.departureTime} - ${f.arrivalTime}
+- Fare: ${f.price}
+- Passengers: ${pax}`;
+                return `
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center text-brand-blue font-bold text-lg shrink-0">
+                                <i class="fa-solid fa-plane"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-brand-navy">${f.airline} <span class="text-xs text-gray-400">(${f.code})</span></h4>
+                                <p class="text-xs text-gray-500 mt-0.5"><span class="font-bold text-gray-700">${f.departureTime}</span> ➔ <span class="font-bold text-gray-700">${f.arrivalTime}</span> (${f.duration}, ${f.stops})</p>
+                                <span class="inline-block bg-blue-50 text-brand-blue text-[10px] font-bold px-2 py-0.5 rounded mt-1">${f.cabinClass}</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end border-t sm:border-0 pt-3 sm:pt-0">
+                            <div class="text-left sm:text-right">
+                                <p class="text-xs text-gray-400">Est. Fare</p>
+                                <p class="text-lg font-extrabold text-brand-navy">${f.price}</p>
+                            </div>
+                            <a href="${waBaseUrl}${encodeURIComponent(waMsg)}" target="_blank" class="bg-brand-whatsapp hover:bg-brand-whatsappHover text-white font-bold text-xs px-5 py-3 rounded-xl flex items-center gap-1.5 shadow-md">
+                                <i class="fab fa-whatsapp text-base"></i> Book on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            resultsSec.classList.remove('hidden');
+            resultsSec.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Handle Train Search Execution
+        async function handleTrainSearch(e) {
+            e.preventDefault();
+            const from = document.getElementById('train-from').value;
+            const to = document.getElementById('train-to').value;
+            const date = document.getElementById('train-date').value || 'Tomorrow';
+            const trainClass = document.getElementById('train-class').value;
+
+            const trains = await trainService.searchTrains({ from, to, date, trainClass });
+
+            const resultsSec = document.getElementById('results-section');
+            const resultsTitle = document.getElementById('results-title');
+            const resultsSubtitle = document.getElementById('results-subtitle');
+            const grid = document.getElementById('results-cards-grid');
+
+            resultsTitle.innerText = `Train Search: ${from.split(' - ')[0]} 🚆 ${to.split(' - ')[0]}`;
+            resultsSubtitle.innerText = `Journey Date: ${date} • Quota/Class: ${trainClass}`;
+
+            grid.innerHTML = trains.map(t => {
+                const waMsg = `Hi TA Travels, I want to book a Train ticket:
+- Train: ${t.trainName} (${t.trainNumber})
+- Route: ${from} to ${to}
+- Date: ${date}
+- Departure: ${t.departureTime}`;
+                return `
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all space-y-4">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-gray-100 pb-3">
+                            <div>
+                                <h4 class="text-base font-bold text-brand-navy">${t.trainName} <span class="text-xs text-brand-blue font-semibold">#${t.trainNumber}</span></h4>
+                                <p class="text-xs text-gray-500">${t.departureTime} ➔ ${t.arrivalTime} (${t.duration}) • Runs: ${t.runsOn}</p>
+                            </div>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full font-bold">IRCTC Schedule</span>
+                        </div>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            ${t.classes.map(c => `
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 flex flex-col justify-between">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-xs font-bold text-brand-navy">${c.code} (${c.name})</span>
+                                        <span class="text-xs font-bold text-brand-blue">${c.fare}</span>
+                                    </div>
+                                    <div class="mt-2 flex items-center justify-between">
+                                        <span class="text-[10px] font-bold px-2 py-0.5 rounded ${c.statusColor}">${c.status}</span>
+                                        <a href="${waBaseUrl}${encodeURIComponent(waMsg + `
+- Selected Class: ${c.code} (${c.fare})`)}" target="_blank" class="text-brand-whatsapp text-xs font-bold hover:underline flex items-center gap-1">
+                                            Book <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            resultsSec.classList.remove('hidden');
+            resultsSec.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleFreshUpSearch(e) {
+            e.preventDefault();
+            const loc = document.getElementById('room-location').value;
+            const date = document.getElementById('room-date').value || 'Today';
+            const hours = document.getElementById('room-hours').value;
+
+            const message = `Hi TA Travels, I'm looking for a premium Fresh-Up Room:
+- Location Hub: ${loc}
+- Check-In Date: ${date}
+- Duration Slot: ${hours}
+
+Please share room availability and hourly quotes.`;
+            window.open(waBaseUrl + encodeURIComponent(message), '_blank');
+        }
+
+        function handleKeralaSearch(e) {
+            e.preventDefault();
+            document.getElementById('kerala-packages').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleRentalSearch(e) {
+            e.preventDefault();
+            const vehicle = document.getElementById('rental-vehicle').value;
+            const start = document.getElementById('rental-start').value || 'Not selected';
+            const duration = document.getElementById('rental-duration').value;
+
+            const message = `Hi TA Travels, I want to rent/book a vehicle:
+- Vehicle Type: ${vehicle}
+- Start Date: ${start}
+- Rent Duration: ${duration}
+
+Please confirm availability and rent quotes.`;
+            window.open(waBaseUrl + encodeURIComponent(message), '_blank');
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value || "Not provided";
+            const phone = document.getElementById('contact-phone').value || "Not provided";
+            const service = document.getElementById('contact-service').value;
+            const date = document.getElementById('contact-date').value || "Not provided";
+            const userMsg = document.getElementById('contact-message').value || "No comments";
+
+            const message = `Hi TA Travels, I submitted a contact enquiry:
+- Name: ${name}
+- Phone: ${phone}
+- Service Needed: ${service}
+- Travel Date: ${date}
+- Comments: ${userMsg}`;
+            window.open(waBaseUrl + encodeURIComponent(message), '_blank');
+        }
+
+        function closeResults() {
+            document.getElementById('results-section').classList.add('hidden');
+        }
+
+        // Package Modal Handlers
+        function openPackageModal(id) {
+            const pkg = keralaPackagesData.find(p => p.id === id);
+            if (!pkg) return;
+
+            const content = document.getElementById('modal-content');
+            content.innerHTML = `
+                <div class="space-y-4">
+                    <img src="${pkg.image}" alt="${pkg.title}" class="w-full h-56 object-cover rounded-2xl">
+                    <div class="flex items-center justify-between">
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">${pkg.duration}</span>
+                        <span class="text-xl font-extrabold text-brand-navy">${pkg.price} <span class="text-xs text-gray-400 font-normal">/ person</span></span>
+                    </div>
+                    <h3 class="text-2xl font-bold font-outfit text-brand-navy">${pkg.title}</h3>
+                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">${pkg.desc}</p>
+
+                    <div class="border-t border-gray-100 pt-3">
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Package Inclusions:</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-700">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Private AC Vehicle & Chauffeur</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Handpicked Hotel / Resort Stay</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Daily Breakfast Included</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Driver Allowances, Tolls & Parking</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="${waBaseUrl}${encodeURIComponent(`Hi TA Travels, I want to book the ${pkg.title} package (${pkg.duration}, ${pkg.price}). Please share customized itinerary.`)}" 
+                           target="_blank" rel="noopener noreferrer"
+                           class="w-full bg-brand-whatsapp hover:bg-brand-whatsappHover text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm shadow-md">
+                            <i class="fab fa-whatsapp text-lg"></i> Direct WhatsApp Booking Enquiry
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('package-modal').classList.remove('hidden');
+        }
+
+        function closePackageModal() {
+            document.getElementById('package-modal').classList.add('hidden');
+        }
+
+        // Initialize UI on Load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderKeralaCards();
+
+            // Set default date picker values to tomorrow
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const isoTomorrow = tomorrow.toISOString().split('T')[0];
+
+            ['flight-date', 'train-date', 'room-date', 'rental-start', 'contact-date'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.value = isoTomorrow;
+            });
+
+            // Mobile Menu Toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+                mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+            }
+        });
+    </script>
+</body>
+</html>
